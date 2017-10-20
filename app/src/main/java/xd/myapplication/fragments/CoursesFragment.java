@@ -16,9 +16,11 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import xd.myapplication.R;
+import xd.myapplication.adapters.ComplaintsAdapter;
 import xd.myapplication.adapters.CourseAdapter;
 import xd.myapplication.api.Api;
 import xd.myapplication.models.Category;
+import xd.myapplication.models.Complaint;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -65,24 +67,42 @@ public class CoursesFragment extends Fragment {
         urls[1] = "xD";
         urls[2] = "LOL";
 
-        CourseAdapter courseAdapter = new CourseAdapter(titles, urls);
-        recyclerView.setAdapter(courseAdapter);
+
 
         // Call from request
 
+        /*
         Call<List<Category>> call = Api.instance().getCategories();
         call.enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
                 if (response.body() != null) {
-                    for(Category category : response.body()) {
-                        Log.i("Name:", category.getName());
-                    }
+                    CourseAdapter courseAdapter = new CourseAdapter(response.body());
+                    recyclerView.setAdapter(courseAdapter);
                 }
             }
 
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
+
+            }
+        });
+       */
+
+
+        Call<List<Complaint>> call = Api.instance().getComplaints();
+        call.enqueue(new Callback<List<Complaint>>() {
+            @Override
+            public void onResponse(Call<List<Complaint>> call, Response<List<Complaint>> response) {
+                if(response.body() != null) {
+                    ComplaintsAdapter complaintsAdapter = new ComplaintsAdapter(response.body());
+                    recyclerView.setAdapter(complaintsAdapter);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Complaint>> call, Throwable t) {
+                Log.e("xD", t.getMessage());
 
             }
         });
