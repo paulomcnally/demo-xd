@@ -11,4 +11,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Complaint add activity -->
+    <string name="complaint_add_activity_edit_text_title">Titulo</string>
+    <string name="complaint_add_activity_edit_text_description">Descripción</string>
+    <string name="complaint_add_activity_button_create">Crear</string>
 </resources>

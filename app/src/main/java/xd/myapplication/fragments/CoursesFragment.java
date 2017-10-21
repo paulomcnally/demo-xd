@@ -1,6 +1,7 @@
 package xd.myapplication.fragments;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -16,6 +17,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 import xd.myapplication.R;
+import xd.myapplication.activities.ComplaintAddActivity;
 import xd.myapplication.adapters.ComplaintsAdapter;
 import xd.myapplication.adapters.CourseAdapter;
 import xd.myapplication.api.Api;
@@ -97,6 +99,9 @@ public class CoursesFragment extends Fragment {
                 if(response.body() != null) {
                     ComplaintsAdapter complaintsAdapter = new ComplaintsAdapter(response.body());
                     recyclerView.setAdapter(complaintsAdapter);
+
+                    Intent intent = new Intent(getContext(), ComplaintAddActivity.class);
+                    startActivity(intent);
                 }
             }
 
@@ -106,6 +111,8 @@ public class CoursesFragment extends Fragment {
 
             }
         });
+
+
 
 
 
