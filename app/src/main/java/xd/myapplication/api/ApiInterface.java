@@ -22,8 +22,11 @@ public interface ApiInterface {
     @POST("Complaints")
     Call<Complaint> createComplaint(@Body Complaint complaint);
 
-    @POST("Users")
+    @POST("Users/login")
     Call<AccessToken> login(@Body User user);
+
+    @POST("Users")
+    Call<User> signUp(@Body User user);
 
 
 }
