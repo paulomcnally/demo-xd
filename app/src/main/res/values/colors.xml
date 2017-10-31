@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="placeHolderImage">#D3D3D3</color>
+    <color name="backgroundColor">#FF0000</color>
 </resources>

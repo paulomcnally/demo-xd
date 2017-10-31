@@ -16,4 +16,10 @@
     <string name="complaint_add_activity_edit_text_title">Titulo</string>
     <string name="complaint_add_activity_edit_text_description">Descripción</string>
     <string name="complaint_add_activity_button_create">Crear</string>
+
+    <string name="email">Correo electrónico</string>
+    <string name="password">Contraseña</string>
+
+    <string name="sign_up">REGISTRARME</string>
+    <string name="sign_in">ENTRAR</string>
 </resources>

@@ -6,8 +6,10 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import xd.myapplication.models.AccessToken;
 import xd.myapplication.models.Category;
 import xd.myapplication.models.Complaint;
+import xd.myapplication.models.User;
 
 public interface ApiInterface {
 
@@ -19,6 +21,9 @@ public interface ApiInterface {
 
     @POST("Complaints")
     Call<Complaint> createComplaint(@Body Complaint complaint);
+
+    @POST("Users")
+    Call<AccessToken> login(@Body User user);
 
 
 }

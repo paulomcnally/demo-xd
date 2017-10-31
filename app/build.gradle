@@ -34,5 +34,6 @@ dependencies {
     compile 'com.facebook.fresco:fresco:1.5.0'
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile (group: 'com.tumblr', name: 'remember', version: '1.0.0', ext: 'aar')
     testCompile 'junit:junit:4.12'
 }
