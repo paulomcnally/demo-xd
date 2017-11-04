@@ -14,6 +14,7 @@ import retrofit2.Response;
 import xd.myapplication.R;
 import xd.myapplication.api.Api;
 import xd.myapplication.models.Complaint;
+import xd.myapplication.models.Location;
 
 public class ComplaintAddActivity extends AppCompatActivity {
 
@@ -66,6 +67,15 @@ public class ComplaintAddActivity extends AppCompatActivity {
             complaint.setCategoryId(1);
             complaint.setUserId(1);
             complaint.setEnabled(true);
+
+            // instance location
+            Location location = new Location();
+            location.setLat(12.88123);
+            location.setLng(80.21213213);
+
+            complaint.setLocation(location);
+
+
 
             // this make http request to create an complaint
             Call<Complaint> call = Api.instance().createComplaint(complaint);

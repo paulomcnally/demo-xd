@@ -29,6 +29,7 @@ import xd.myapplication.models.Complaint;
  */
 public class CoursesFragment extends Fragment {
 
+
     private RecyclerView recyclerView;
 
 
@@ -40,6 +41,7 @@ public class CoursesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        
 
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_courses, container, false);
@@ -97,6 +99,7 @@ public class CoursesFragment extends Fragment {
             @Override
             public void onResponse(Call<List<Complaint>> call, Response<List<Complaint>> response) {
                 if(response.body() != null) {
+
                     ComplaintsAdapter complaintsAdapter = new ComplaintsAdapter(response.body());
                     recyclerView.setAdapter(complaintsAdapter);
 

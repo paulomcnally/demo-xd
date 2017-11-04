@@ -10,6 +10,9 @@ public class Complaint {
     private int categoryId;
     private int userId;
     private boolean enabled;
+    private Location location;
+    private List<Picture> pictures
+
 
     public String getTitle() {
         return title;
@@ -49,5 +52,13 @@ public class Complaint {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
     }
 }
